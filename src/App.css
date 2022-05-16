@@ -18,12 +18,6 @@ table, th, td {
   width: 100px;
 }
 
-.embeddedbtn{
-  display:inline-block;
-  width: 80px;
-  height: 40px;
-}
-
 table, tr, td {
   border: none;
 }

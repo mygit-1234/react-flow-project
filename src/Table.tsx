@@ -3,19 +3,8 @@ import './App.css';
 
 function Table() {
 
-    const [approvals, setApprovals] = useState<number>(1);
-    const [declines, setDeclines] = useState<number>(0);
-
     const [appNotes, setAppNotes] = useState<string>("");
     const [decNotes, setDecNotes] = useState<string>("");
-
-    const handleApprovals = () => {
-        setApprovals(approvals => approvals + 1);
-    }
-
-    const handleDeclines = () => {
-        setDeclines(declines => declines + 1);
-    }
 
     const handleAppNoteUpdates = (evt: React.ChangeEvent<HTMLInputElement>) => {
         setAppNotes(evt.target.value);
@@ -29,22 +18,16 @@ function Table() {
         <table>
             <thead>
                 <tr>
-                    <th>Approved</th>
-                    <th>Denied</th>
+                    <th colSpan={3}>Credit card component</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{approvals}</td>
-                    <td>{declines}</td>
+                    <td colSpan={3}><input style={{width: 295}} type='text' value={appNotes} placeholder="XXX XXX XXX XXX" onChange={handleAppNoteUpdates}/></td>
                 </tr>
                 <tr>
-                    <td><input className='embeddedbtn' type='text' value={appNotes} onChange={handleAppNoteUpdates}/></td>
-                    <td><input className='embeddedbtn' type='text' value={decNotes} onChange={handleDecNoteUpdates}/></td>
-                </tr>
-                <tr>
-                    <td><input className='embeddedbtn' type='button' value='Approve' onClick={handleApprovals}/></td>
-                    <td><input className='embeddedbtn' type='button' value='Decline' onClick={handleDeclines}/></td>
+                    <td colSpan={2}><input type='text' value={decNotes} placeholder="Name on the card" onChange={handleDecNoteUpdates}/></td>
+                    <td colSpan={1}><input type="text" placeholder="valid thru"></input></td>
                 </tr>
             </tbody>
         </table>

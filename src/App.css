@@ -24,8 +24,6 @@ table, tr, td {
 
 .parent-container {
   border: 2px solid black;
-  width: 1000px;
-  height: 1000px;
-  overflow-y: auto;
-  overflow-x: auto;
+  width: 1400px;
+  height: 800px;
 }

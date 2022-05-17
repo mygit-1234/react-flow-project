@@ -9,15 +9,16 @@ const App = () => {
     const onConnect = (params: Connection) => setEdges((eds) => addEdge(params, eds));
 
     return (
-      <div style={{height:1000, width: 1000}}>
+      <div className='parent-container'>
         <ReactFlow
             nodes={nodes}
             edges={edges}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             defaultZoom={1.5}
-            minZoom={0.2}
-            maxZoom={4}
+            zoomOnScroll={false}
+            zoomOnDoubleClick={false}
+            style={{ maxHeight: "100%", overflow: "scroll" }}
             attributionPosition="bottom-left"
             onConnect={onConnect}
         />

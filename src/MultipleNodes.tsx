@@ -1,4 +1,4 @@
-import ReactFlow, { ReactFlowProvider, useNodesState, useEdgesState, addEdge, Connection } from 'react-flow-renderer';
+import ReactFlow, { ReactFlowProvider, useNodesState, useEdgesState, addEdge, Connection, MiniMap } from 'react-flow-renderer';
 import './App.css'
 
 import initialNodes from './nodesGenerator';
@@ -22,7 +22,9 @@ const MultipleNodes = () => {
             style={{ maxHeight: "100%", maxWidth: "100%", overflow: "scroll" }}
             attributionPosition="bottom-left"
             onConnect={onConnect}
-        />
+        >
+            <MiniMap/>
+        </ReactFlow>
       </div>  
     );
 };
